@@ -1,20 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
-var array = [10]int{1, 2, 3, 4, 5, 6, 7, 8, 8, 9}
+var firstSlice = []string{"я", "помню", "чудное", "мгновенье"}
+var secondSlice = []string{"ананас", "банан", "груша", "яблоко"}
+
+func check(slice []string) {
+	cp := slices.Clone(slice)
+	slices.Sort(slice)
+
+	fmt.Println(slices.Equal(cp, slice))
+}
 
 func main() {
-	var buf = make(map[int]int)
-
-	for _, i := range array {
-		buf[i]++
-
-		if buf[i] > 1 {
-			fmt.Println("true")
-			return
-		}
-	}
-
-	fmt.Println("false")
+	check(firstSlice)
+	check(secondSlice)
 }

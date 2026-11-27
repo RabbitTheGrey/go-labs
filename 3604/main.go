@@ -15,6 +15,7 @@ func main() {
 	}
 
 	for letter, count := range letters {
-		fmt.Printf("%c: %d\n", letter, count)
+		fmt.Printf("%c - %d\n", letter, count)
 	}
 }
+
